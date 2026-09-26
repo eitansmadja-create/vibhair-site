@@ -1,0 +1,10 @@
+# Secrets - never commit
+chatbot-ia-506121-d2f7891c06d9.json
+server/.env
+
+# Node
+server/node_modules/
+
+# Local run logs / scratch
+server/*.log
+server/test-payload.json

@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: vibhair-site
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      # Fill these in yourself in the Render dashboard when prompted — never
+      # commit real secrets to this file or to the repo.
+      - key: GOOGLE_CALENDAR_ID
+        sync: false
+      # Paste the FULL contents of the Google service account JSON key here
+      # (single line). Render has no access to local files, so the key file
+      # itself is never uploaded — only this env var is used in production.
+      - key: GOOGLE_SERVICE_ACCOUNT_JSON
+        sync: false
+      # Your Anthropic API key (https://console.anthropic.com/).
+      - key: ANTHROPIC_API_KEY
+        sync: false

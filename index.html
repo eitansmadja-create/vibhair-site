@@ -1,0 +1,1289 @@
+<title>Vibhair — סטודיו שיער, נתניה</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Vibhair — סטודיו שיער בוטיק בלב נתניה. תספורות, צבע, החלקות ותסרוקות אירוע, בליווי עוזרת דיגיטלית לקביעת תורים.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;600;700&family=Bellefair&family=Assistant:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  /* ===================== Tokens ===================== */
+  :root{
+    --ground:#FBF6F3;
+    --surface:#FFFFFF;
+    --surface-alt:#F5E4E2;
+    --ink:#2B2430;
+    --ink-soft:#6E606A;
+    --ink-faint:#9C8F97;
+    --rose:#C97B87;
+    --rose-deep:#A85D6B;
+    --rose-tint:#F3DCDF;
+    --gold:#B8935A;
+    --gold-soft:#E9D5B5;
+    --sage:#8FA083;
+    --border:rgba(43,36,48,0.10);
+    --border-strong:rgba(43,36,48,0.18);
+    --shadow:0 20px 50px -25px rgba(43,36,48,0.35);
+    --shadow-sm:0 8px 20px -12px rgba(43,36,48,0.30);
+    --footer-bg:#241D28;
+    --footer-text:#FBF6F3;
+    --hero-accent:#E7C68B;
+    --radius-lg:28px;
+    --radius-md:16px;
+    --radius-sm:10px;
+    --radius-pill:999px;
+    --font-display:'Frank Ruhl Libre', 'Times New Roman', serif;
+    --font-body:'Assistant', 'Segoe UI', sans-serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#1F1922;
+      --surface:#28212B;
+      --surface-alt:#332831;
+      --ink:#F3ECE9;
+      --ink-soft:#C9BCC2;
+      --ink-faint:#8F818A;
+      --rose:#E3A0AA;
+      --rose-deep:#F0C1C8;
+      --rose-tint:#3A2A30;
+      --gold:#D9B681;
+      --gold-soft:#4A3B2C;
+      --sage:#A8B89C;
+      --border:rgba(243,236,233,0.12);
+      --border-strong:rgba(243,236,233,0.22);
+      --shadow:0 20px 50px -25px rgba(0,0,0,0.6);
+      --shadow-sm:0 8px 20px -12px rgba(0,0,0,0.5);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#1F1922;
+    --surface:#28212B;
+    --surface-alt:#332831;
+    --ink:#F3ECE9;
+    --ink-soft:#C9BCC2;
+    --ink-faint:#8F818A;
+    --rose:#E3A0AA;
+    --rose-deep:#F0C1C8;
+    --rose-tint:#3A2A30;
+    --gold:#D9B681;
+    --gold-soft:#4A3B2C;
+    --sage:#A8B89C;
+    --border:rgba(243,236,233,0.12);
+    --border-strong:rgba(243,236,233,0.22);
+    --shadow:0 20px 50px -25px rgba(0,0,0,0.6);
+    --shadow-sm:0 8px 20px -12px rgba(0,0,0,0.5);
+    color-scheme: dark;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important;scroll-behavior:auto !important;}
+  }
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+  h1,h2,h3,h4{margin:0;font-family:var(--font-display);font-weight:600;text-wrap:balance;color:var(--ink);}
+  p{margin:0;}
+  button{font-family:inherit;cursor:pointer;}
+  input,textarea{font-family:inherit;font-size:1rem;}
+  :focus-visible{outline:2px solid var(--rose-deep);outline-offset:3px;border-radius:4px;}
+
+  .container{max-width:1180px;margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:0.8rem;font-weight:700;letter-spacing:0.14em;
+    color:var(--rose-deep);text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  .eyebrow::after{content:"";width:28px;height:1px;background:var(--gold);}
+  [dir="rtl"] .eyebrow::after{order:-1;}
+  .section-head{max-width:640px;margin-bottom:52px;}
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.6rem);line-height:1.2;}
+  .section-head p{margin-top:16px;color:var(--ink-soft);font-size:1.05rem;max-width:56ch;}
+  .section-head.center{margin-inline:auto;text-align:center;}
+
+  section{padding:96px 0;}
+  section.tight{padding:72px 0;}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:15px 32px;border-radius:var(--radius-pill);
+    font-weight:700;font-size:1rem;border:1px solid transparent;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--rose-deep);color:#fff;box-shadow:var(--shadow-sm);}
+  .btn-primary:hover{box-shadow:var(--shadow);background:var(--rose);}
+  .btn-outline{background:transparent;border-color:var(--border-strong);color:var(--ink);}
+  .btn-outline:hover{border-color:var(--rose-deep);color:var(--rose-deep);}
+  .btn-gold{background:var(--gold);color:#2B2430;box-shadow:var(--shadow-sm);}
+  .btn-gold:hover{background:var(--gold-soft);color:#2B2430;}
+  .btn-block{width:100%;}
+  .btn-sm{padding:10px 18px;font-size:0.9rem;}
+
+  /* reveal-on-scroll */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.is-visible{opacity:1;transform:translateY(0);}
+
+  /* ===================== Header ===================== */
+  .site-header{
+    position:fixed;inset-inline:0;top:0;z-index:200;
+    background:color-mix(in srgb, var(--ground) 82%, transparent);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s ease, background .3s ease, padding .3s ease;
+    padding:22px 0;
+  }
+  .site-header.scrolled{border-color:var(--border);padding:14px 0;box-shadow:var(--shadow-sm);}
+  .site-header .container{display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .logo{display:flex;flex-direction:column;line-height:1;gap:4px;}
+  .logo .wordmark{
+    font-family:var(--font-body);font-weight:300;font-size:1.55rem;letter-spacing:0.14em;
+    text-transform:uppercase;direction:ltr;color:var(--ink);
+  }
+  .logo .wordmark b{font-weight:700;color:var(--rose-deep);}
+  .logo .tagline{font-size:0.72rem;color:var(--ink-faint);letter-spacing:0.04em;}
+  .nav-links{display:flex;align-items:center;gap:34px;}
+  .nav-links a{font-weight:600;font-size:0.98rem;color:var(--ink-soft);transition:color .2s ease;position:relative;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-links a::after{content:"";position:absolute;bottom:-6px;inset-inline:0;height:2px;background:var(--rose-deep);transform:scaleX(0);transition:transform .25s ease;transform-origin:center;}
+  .nav-links a:hover::after{transform:scaleX(1);}
+  .nav-actions{display:flex;align-items:center;gap:14px;}
+  .nav-toggle{display:none;background:none;border:1px solid var(--border-strong);border-radius:var(--radius-sm);width:44px;height:44px;align-items:center;justify-content:center;}
+  .nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{content:"";display:block;width:20px;height:2px;background:var(--ink);position:relative;transition:transform .25s ease, opacity .25s ease;}
+  .nav-toggle span::before{position:absolute;top:-6px;}
+  .nav-toggle span::after{position:absolute;top:6px;}
+
+  @media (max-width:860px){
+    .nav-links{
+      position:fixed;inset-inline:0;top:0;height:100vh;height:100dvh;
+      background:var(--ground);flex-direction:column;justify-content:center;
+      gap:30px;font-size:1.3rem;
+      transform:translateY(-100%);transition:transform .35s ease;
+      z-index:150;
+    }
+    .nav-links.open{transform:translateY(0);}
+    .nav-toggle{display:flex;}
+    .nav-cta-desktop{display:none;}
+  }
+
+  /* ===================== Hero ===================== */
+  .hero{
+    position:relative;padding-top:170px;overflow:hidden;
+    display:flex;align-items:center;min-height:92vh;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:-2;
+    background-image:url('https://images.pexels.com/photos/33696272/pexels-photo-33696272.jpeg?auto=compress&cs=tinysrgb&w=1920');
+    background-size:cover;background-position:center 14%;background-repeat:no-repeat;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background-image:
+      linear-gradient(to left, rgba(36,29,40,.92) 0%, rgba(36,29,40,.62) 40%, rgba(36,29,40,.28) 72%, rgba(36,29,40,.10) 100%),
+      linear-gradient(to top, rgba(36,29,40,.58) 0%, rgba(36,29,40,0) 42%),
+      radial-gradient(circle, rgba(255,255,255,0.09) 1.5px, transparent 1.5px);
+    background-size:100% 100%, 100% 100%, 26px 26px;
+    background-repeat:no-repeat, no-repeat, repeat;
+  }
+  .hero-copy{
+    max-width:720px;padding:20px 24px 100px;display:flex;flex-direction:column;justify-content:center;gap:26px;
+    position:relative;z-index:2;
+  }
+  .hero-copy h1{font-family:'Bellefair','Times New Roman',serif;font-weight:400;letter-spacing:0.01em;font-size:clamp(2.4rem,5vw,3.7rem);line-height:1.16;color:var(--footer-text);}
+  .hero-copy .eyebrow{color:var(--hero-accent);}
+  .hero-copy .eyebrow::after{background:var(--hero-accent);}
+  .hero-copy .lede{font-size:1.15rem;color:color-mix(in srgb, var(--footer-text) 80%, transparent);max-width:46ch;}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:6px;}
+  .hero-cta .btn-outline{
+    color:var(--footer-text);border-color:rgba(255,255,255,0.38);
+    background:rgba(255,255,255,0.07);backdrop-filter:blur(6px);
+  }
+  .hero-cta .btn-outline:hover{background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.6);color:var(--footer-text);}
+  .hero-stats{display:flex;gap:34px;margin-top:18px;flex-wrap:wrap;}
+  .hero-stats div{display:flex;flex-direction:column;gap:2px;}
+  .hero-stats strong{font-family:var(--font-display);font-size:1.5rem;color:var(--footer-text);}
+  .hero-stats span{font-size:0.82rem;color:color-mix(in srgb, var(--footer-text) 62%, transparent);}
+
+  .hero-divider{position:absolute;left:0;right:0;bottom:-1px;line-height:0;z-index:3;}
+  .hero-divider svg{width:100%;height:90px;display:block;}
+
+  @media (max-width:940px){
+    .hero{min-height:auto;}
+    .hero-copy{max-width:100%;padding-top:36px;padding-bottom:80px;}
+    .hero::after{
+      background-image:
+        linear-gradient(to top, rgba(36,29,40,.95) 0%, rgba(36,29,40,.55) 55%, rgba(36,29,40,.30) 100%),
+        radial-gradient(circle, rgba(255,255,255,0.09) 1.5px, transparent 1.5px);
+      background-size:100% 100%, 26px 26px;
+      background-repeat:no-repeat, repeat;
+    }
+  }
+
+  /* ===================== Services ===================== */
+  .services{background:var(--ground);}
+  .service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;}
+  .service-group{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:22px 26px 10px;}
+  .service-group h3{display:flex;align-items:center;gap:10px;font-size:0.8rem;font-weight:700;letter-spacing:0.14em;color:var(--gold);padding-bottom:12px;border-bottom:1px solid var(--border);}
+  .service-item{padding:14px 0;border-bottom:1px dashed var(--border-strong);display:flex;flex-direction:column;gap:4px;}
+  .service-item:last-child{border-bottom:0;}
+  .service-item .si-top{display:flex;align-items:baseline;gap:12px;}
+  .service-item h4{font-size:1.05rem;font-weight:600;flex:1;min-width:0;}
+  .service-item .price{font-family:var(--font-display);font-size:1.25rem;color:var(--rose-deep);font-weight:700;white-space:nowrap;}
+  .service-item .si-bottom{display:flex;align-items:baseline;gap:12px;color:var(--ink-soft);font-size:0.88rem;}
+  .service-item .si-bottom p{flex:1;min-width:0;}
+  .service-item .si-bottom small{color:var(--ink-faint);font-size:0.78rem;white-space:nowrap;}
+  @media (max-width:760px){ .service-grid{grid-template-columns:1fr;gap:14px;} .service-group{padding:18px 20px 6px;} .service-item{padding:12px 0;} }
+
+  /* ===================== Gallery ===================== */
+  .gallery{background:var(--surface-alt);position:relative;}
+  .gallery-grid{
+    display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:120px;gap:18px;
+  }
+  .gallery-item{
+    position:relative;border-radius:var(--radius-md);overflow:hidden;
+    display:flex;align-items:flex-end;padding:18px;
+    isolation:isolate;
+    background-color:var(--surface-alt);
+  }
+  .gallery-item::before{
+    content:"";position:absolute;inset:0;z-index:-2;
+    background-size:cover;background-position:center;
+    transform:scale(1);transition:transform .6s ease;
+  }
+  .gallery-item::after{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(to top, rgba(20,14,18,0.82), rgba(20,14,18,0.05) 55%);
+    transition:background .35s ease;
+  }
+  .gallery-item:hover::before{transform:scale(1.08);}
+  .gallery-item:hover::after{background:linear-gradient(to top, rgba(20,14,18,0.88), rgba(20,14,18,0.25) 65%);}
+  .gallery-item span{color:#fff;font-family:var(--font-display);font-size:1.05rem;text-shadow:0 2px 10px rgba(0,0,0,0.3);}
+  .gallery-item:hover .icon-mark{transform:scale(1.12) rotate(-4deg);}
+  .icon-mark{position:absolute;top:16px;inset-inline-end:16px;font-size:1.4rem;opacity:0.85;transition:transform .3s ease;}
+  .g1{grid-column:span 3;grid-row:span 2;}
+  .g2{grid-column:span 3;grid-row:span 1;}
+  .g3{grid-column:span 3;grid-row:span 1;}
+  .g4{grid-column:span 2;grid-row:span 2;}
+  .g5{grid-column:span 2;grid-row:span 2;}
+  .g6{grid-column:span 2;grid-row:span 2;}
+  .g1::before{background-image:url('https://images.pexels.com/photos/7440131/pexels-photo-7440131.jpeg?auto=compress&cs=tinysrgb&w=1200');}
+  .g2::before{background-image:url('https://images.pexels.com/photos/6171/hairstyle-hair-wedding-bride.jpg?auto=compress&cs=tinysrgb&w=1200');}
+  .g3::before{background-image:url('https://images.pexels.com/photos/28994389/pexels-photo-28994389.jpeg?auto=compress&cs=tinysrgb&w=1200');}
+  .g4::before{background-image:url('https://images.pexels.com/photos/14615063/pexels-photo-14615063.jpeg?auto=compress&cs=tinysrgb&w=1200');}
+  .g5::before{background-image:url('https://images.pexels.com/photos/4981475/pexels-photo-4981475.jpeg?auto=compress&cs=tinysrgb&w=1200');}
+  .g6::before{background-image:url('https://images.pexels.com/photos/5824213/pexels-photo-5824213.jpeg?auto=compress&cs=tinysrgb&w=1200');}
+
+  @media (max-width:760px){
+    .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px;}
+    .g1,.g2,.g3,.g4,.g5,.g6{grid-column:span 1;grid-row:span 1;}
+    .g1{grid-column:span 2;grid-row:span 2;}
+  }
+
+  /* ===================== Testimonials ===================== */
+  .testimonials{background:var(--ground);}
+  .testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px;}
+  .testi-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);
+    padding:26px;display:flex;flex-direction:column;gap:14px;
+  }
+  .stars{color:var(--gold);font-size:0.95rem;letter-spacing:2px;}
+  .testi-card p.quote{color:var(--ink-soft);font-size:0.98rem;flex:1;}
+  .testi-person{display:flex;align-items:center;gap:12px;}
+  .avatar{
+    width:40px;height:40px;border-radius:50%;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--font-display);font-weight:600;color:#fff;font-size:1rem;
+  }
+  .testi-person strong{display:block;font-size:0.92rem;}
+  .testi-person span{display:block;font-size:0.78rem;color:var(--ink-faint);}
+
+  /* ===================== Contact ===================== */
+  .contact{background:var(--surface-alt);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  .info-list{display:flex;flex-direction:column;gap:22px;margin-top:28px;}
+  .info-row{display:flex;gap:16px;align-items:flex-start;}
+  .info-row .ico{
+    width:42px;height:42px;border-radius:50%;background:var(--surface);border:1px solid var(--border);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;
+  }
+  .info-row strong{display:block;font-size:0.95rem;margin-bottom:2px;}
+  .info-row span, .info-row p{color:var(--ink-soft);font-size:0.92rem;}
+  .map-box{
+    margin-top:30px;border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--border);
+    aspect-ratio:16/10;position:relative;
+    background:
+      linear-gradient(var(--border) 1px, transparent 1px) 0 0/34px 34px,
+      linear-gradient(90deg, var(--border) 1px, transparent 1px) 0 0/34px 34px,
+      var(--surface);
+  }
+  .map-box .pin{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-100%);
+    display:flex;flex-direction:column;align-items:center;gap:6px;
+  }
+  .map-box .pin .dot{
+    width:34px;height:34px;border-radius:50% 50% 50% 0;transform:rotate(45deg);
+    background:var(--rose-deep);border:3px solid var(--surface);box-shadow:var(--shadow-sm);
+  }
+  .map-box .pin .label{
+    background:var(--surface);border:1px solid var(--border);padding:6px 12px;border-radius:var(--radius-pill);
+    font-size:0.78rem;font-weight:700;white-space:nowrap;box-shadow:var(--shadow-sm);
+  }
+
+  .contact-form{
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);
+    padding:34px;box-shadow:var(--shadow-sm);
+  }
+  .form-row{display:flex;flex-direction:column;gap:8px;margin-bottom:18px;}
+  .form-row label{font-size:0.85rem;font-weight:700;color:var(--ink-soft);}
+  .form-row input,.form-row textarea{
+    background:var(--ground);border:1px solid var(--border-strong);border-radius:var(--radius-sm);
+    padding:13px 16px;color:var(--ink);transition:border-color .2s ease;
+  }
+  .form-row input:focus,.form-row textarea:focus{border-color:var(--rose-deep);outline:none;}
+  .form-row textarea{resize:vertical;min-height:100px;}
+  .form-note{font-size:0.78rem;color:var(--ink-faint);margin-top:12px;text-align:center;}
+  .toast{
+    position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(140%);
+    background:var(--ink);color:var(--ground);padding:14px 26px;border-radius:var(--radius-pill);
+    font-size:0.92rem;font-weight:600;box-shadow:var(--shadow);z-index:500;
+    transition:transform .4s cubic-bezier(.2,.9,.3,1.2);
+  }
+  .toast.show{transform:translateX(-50%) translateY(0);}
+
+  @media (max-width:860px){ .contact-grid{grid-template-columns:1fr;} }
+
+  /* ===================== Footer ===================== */
+  footer{background:var(--footer-bg);color:var(--footer-text);padding:64px 0 28px;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.12);}
+  footer .wordmark{font-family:var(--font-body);font-weight:300;font-size:1.5rem;letter-spacing:0.14em;text-transform:uppercase;direction:ltr;color:var(--footer-text);}
+  footer .wordmark b{font-weight:700;color:var(--rose);}
+  footer p.about{color:color-mix(in srgb, var(--footer-text) 65%, transparent);font-size:0.9rem;margin-top:14px;max-width:38ch;}
+  footer h4{color:var(--footer-text);font-family:var(--font-body);font-size:0.9rem;letter-spacing:0.06em;margin-bottom:16px;}
+  footer ul{display:flex;flex-direction:column;gap:10px;}
+  footer ul a{color:color-mix(in srgb, var(--footer-text) 70%, transparent);font-size:0.92rem;transition:color .2s;}
+  footer ul a:hover{color:var(--rose);}
+  .social-row{display:flex;gap:10px;margin-top:16px;}
+  .social-row a{
+    width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,0.2);
+    display:flex;align-items:center;justify-content:center;font-size:1rem;transition:background .2s, border-color .2s;
+  }
+  .social-row a:hover{background:var(--rose-deep);border-color:var(--rose-deep);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding-top:22px;font-size:0.8rem;color:color-mix(in srgb, var(--footer-text) 55%, transparent);}
+  @media (max-width:760px){ .footer-grid{grid-template-columns:1fr;} }
+
+  /* ===================== Chat Widget ===================== */
+  .chat-launcher{
+    position:fixed;bottom:26px;inset-inline-end:26px;z-index:400;
+    width:64px;height:64px;border-radius:50%;border:none;
+    background:linear-gradient(135deg,var(--rose-deep),var(--gold));
+    color:#fff;font-size:1.6rem;display:flex;align-items:center;justify-content:center;
+    box-shadow:var(--shadow);transition:transform .25s ease;
+  }
+  .chat-launcher:hover{transform:scale(1.06);}
+  .chat-launcher .badge{
+    position:absolute;top:-2px;inset-inline-start:-2px;width:16px;height:16px;border-radius:50%;
+    background:var(--sage);border:2px solid var(--ground);
+    animation:pulse 2.2s infinite;
+  }
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb, var(--sage) 55%, transparent);}50%{box-shadow:0 0 0 6px transparent;}}
+  .chat-launcher .icon-chat{display:block;}
+  .chat-launcher .icon-close{display:none;}
+  .chat-launcher.open .icon-chat{display:none;}
+  .chat-launcher.open .icon-close{display:block;}
+
+  .chat-window{
+    position:fixed;bottom:104px;inset-inline-end:26px;z-index:399;
+    width:min(380px, calc(100vw - 40px));height:min(560px, calc(100vh - 150px));
+    background:var(--surface);border-radius:var(--radius-lg);border:1px solid var(--border);
+    box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden;
+    transform:scale(0.9) translateY(16px);opacity:0;pointer-events:none;
+    transform-origin:bottom left;transition:transform .3s cubic-bezier(.2,.9,.3,1.1), opacity .25s ease;
+  }
+  [dir="rtl"] .chat-window{transform-origin:bottom right;}
+  .chat-window.open{transform:scale(1) translateY(0);opacity:1;pointer-events:auto;}
+
+  .chat-head{
+    background:linear-gradient(120deg,var(--rose-deep),var(--rose));color:#fff;
+    padding:18px 20px;display:flex;align-items:center;gap:12px;flex-shrink:0;
+  }
+  .chat-head .avatar{width:42px;height:42px;background:rgba(255,255,255,0.25);border:2px solid rgba(255,255,255,0.5);font-size:1.1rem;}
+  .chat-head .who strong{display:block;font-size:0.98rem;}
+  .chat-head .who span{display:flex;align-items:center;gap:6px;font-size:0.76rem;opacity:0.9;}
+  .chat-head .who span::before{content:"";width:7px;height:7px;border-radius:50%;background:#8FE0A0;display:inline-block;}
+
+  .chat-body{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:12px;background:var(--ground);}
+  .msg{max-width:82%;padding:11px 15px;border-radius:16px;font-size:0.92rem;line-height:1.5;animation:msgIn .3s ease;}
+  @keyframes msgIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+  .msg.bot{align-self:flex-start;background:var(--surface);border:1px solid var(--border);border-start-start-radius:4px;color:var(--ink);}
+  .msg.user{align-self:flex-end;background:var(--rose-deep);color:#fff;border-start-end-radius:4px;}
+  .msg.confirm{align-self:stretch;max-width:100%;background:var(--surface-alt);border:1px dashed var(--gold);}
+  .msg.confirm .cf-title{font-family:var(--font-display);font-size:1.1rem;margin-bottom:8px;color:var(--rose-deep);}
+  .msg.confirm .cf-row{display:flex;justify-content:space-between;font-size:0.85rem;padding:4px 0;color:var(--ink-soft);}
+  .msg.confirm .cf-row b{color:var(--ink);}
+
+  .typing{align-self:flex-start;display:flex;gap:4px;padding:12px 15px;background:var(--surface);border:1px solid var(--border);border-radius:16px;border-start-start-radius:4px;}
+  .typing span{width:6px;height:6px;border-radius:50%;background:var(--ink-faint);animation:blink 1.2s infinite;}
+  .typing span:nth-child(2){animation-delay:.2s;}
+  .typing span:nth-child(3){animation-delay:.4s;}
+  @keyframes blink{0%,80%,100%{opacity:0.25;}40%{opacity:1;}}
+
+  .chat-quick{display:flex;flex-wrap:wrap;gap:8px;padding:0 18px 14px;background:var(--ground);flex-shrink:0;}
+  .qbtn{
+    background:var(--surface);border:1px solid var(--border-strong);color:var(--ink);
+    padding:9px 15px;border-radius:var(--radius-pill);font-size:0.84rem;font-weight:600;
+    transition:background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .qbtn:hover{background:var(--rose-deep);color:#fff;border-color:var(--rose-deep);}
+
+  /* ---- Week slot picker (mini calendar embedded in chat) ---- */
+  .slot-picker{align-self:stretch;max-width:100%;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:10px;}
+  .sp-days{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;}
+  .sp-day{flex:0 0 auto;background:var(--ground);border:1px solid var(--border-strong);color:var(--ink);border-radius:12px;padding:8px 11px;font-size:0.78rem;font-weight:600;text-align:center;line-height:1.35;white-space:nowrap;}
+  .sp-day span{display:block;font-size:0.72rem;font-weight:500;color:var(--ink-soft);}
+  .sp-day.active{background:var(--rose-deep);border-color:var(--rose-deep);color:#fff;}
+  .sp-day.active span{color:rgba(255,255,255,0.85);}
+  .sp-times{display:flex;flex-wrap:wrap;gap:8px;}
+  .sp-time{background:var(--ground);border:1px solid var(--border-strong);color:var(--ink);padding:8px 13px;border-radius:var(--radius-pill);font-size:0.82rem;font-weight:600;transition:background .2s ease,color .2s ease,border-color .2s ease;}
+  .sp-time:hover{background:var(--rose-deep);color:#fff;border-color:var(--rose-deep);}
+  .sp-empty{font-size:0.82rem;color:var(--ink-soft);padding:6px 2px;}
+
+  .chat-input{
+    display:flex;gap:10px;padding:14px;border-top:1px solid var(--border);background:var(--surface);flex-shrink:0;
+  }
+  .chat-input input{
+    flex:1;border:1px solid var(--border-strong);background:var(--ground);border-radius:var(--radius-pill);
+    padding:11px 18px;color:var(--ink);
+  }
+  .chat-input input:focus{outline:none;border-color:var(--rose-deep);}
+  .chat-input button{
+    width:42px;height:42px;border-radius:50%;border:none;background:var(--rose-deep);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;transition:background .2s;
+  }
+  .chat-input button:hover{background:var(--rose);}
+
+  @media (max-width:480px){
+    .chat-window{inset-inline:16px;width:auto;bottom:96px;}
+    .chat-launcher{inset-inline-end:16px;bottom:16px;}
+  }
+
+  /* ===================== Mobile refinements ===================== */
+  @media (max-width:600px){
+    section{padding:64px 0;}
+    section.tight{padding:48px 0;}
+    .section-head{margin-bottom:36px;}
+    .hero{padding-top:120px;}
+    .hero-copy{gap:20px;}
+    .hero-stats{gap:26px;}
+    .testi-grid{gap:16px;}
+    .testi-card{padding:22px 20px;}
+    .contact-form{padding:22px;}
+    .footer-grid{gap:32px;}
+  }
+  @media (max-width:480px){
+    .hero-copy h1{font-size:clamp(2rem,9vw,2.6rem);}
+    .hero-cta{gap:12px;}
+    .hero-cta .btn{white-space:normal;text-align:center;width:100%;}
+  }
+</style>
+
+<body dir="rtl" lang="he">
+
+  <!-- ===================== Header ===================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <a href="#home" class="logo">
+        <span class="wordmark">VIB<b>HAIR</b></span>
+        <span class="tagline">סטודיו שיער בוטיק · נתניה</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link">בית</a>
+        <a href="#services" class="nav-link">שירותים</a>
+        <a href="#gallery" class="nav-link">גלריה</a>
+        <a href="#testimonials" class="nav-link">המלצות</a>
+        <a href="#contact" class="nav-link">צור קשר</a>
+        <a href="#contact" class="btn btn-primary" style="display:none" id="mobileCta">קביעת תור</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-primary nav-cta-desktop">קביעת תור</a>
+        <button class="nav-toggle" id="navToggle" aria-label="תפריט"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== Hero ===================== -->
+  <section class="hero" id="home">
+    <div class="container hero-copy">
+      <div class="eyebrow">סטודיו שיער בוטיק · נתניה</div>
+      <h1>תסרוקת שנראית<br>כמו שאת מרגישה</h1>
+      <p class="lede">בין רחוב הרצל לטיילת הים, Vibhair הוא סטודיו שיער שמשלב טכניקה מדויקת, קשב אמיתי לכל לקוחה ולקוח, ואווירה רגועה שמזכירה את נתניה עצמה.</p>
+      <div class="hero-cta">
+        <button class="btn btn-primary" onclick="openChatTo('booking')">קביעת תור עכשיו</button>
+        <a href="#services" class="btn btn-outline">לצפייה בשירותים ובמחירים</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>4.9 ★</strong><span>דירוג לקוחות ממוצע</span></div>
+        <div><strong>12</strong><span>שנות ניסיון בענף</span></div>
+        <div><strong>500+</strong><span>תסרוקות בשנה</span></div>
+      </div>
+    </div>
+    <div class="hero-divider">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,40 C 320,100 1120,-10 1440,45 L1440,90 L0,90 Z" fill="var(--ground)"></path></svg>
+    </div>
+  </section>
+
+  <!-- ===================== Services ===================== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">שירותים ומחירים</div>
+        <h2>כל מה שהשיער שלך צריך</h2>
+        <p>מחירון שקוף, ללא הפתעות. כל טיפול נבנה בהתאמה אישית לפי סוג השיער והמטרה שלך.</p>
+      </div>
+      <div class="service-grid">
+        <div class="service-group reveal">
+          <h3>תספורות</h3>
+          <div class="service-item"><div class="si-top"><h4>תספורת נשים + פן</h4><span class="price">160 ₪</span></div><div class="si-bottom"><p>ייעוץ קצר, גזירה מותאמת לצורת הפנים ופן מעצב לסיום.</p><small>כ-60 דק׳</small></div></div>
+          <div class="service-item"><div class="si-top"><h4>תספורת גברים</h4><span class="price">90 ₪</span></div><div class="si-bottom"><p>גזירה קלאסית או מודרנית, כולל עיצוב קווים וגימור.</p><small>כ-30 דק׳</small></div></div>
+        </div>
+        <div class="service-group reveal">
+          <h3>צבע</h3>
+          <div class="service-item"><div class="si-top"><h4>צבע שורש</h4><span class="price">220 ₪</span></div><div class="si-bottom"><p>כיסוי שורש מדויק בגוון תואם, לשמירה על מראה רענן.</p><small>כ-75 דק׳</small></div></div>
+          <div class="service-item"><div class="si-top"><h4>צבע מלא + גוונים</h4><span class="price">380 ₪</span></div><div class="si-bottom"><p>שינוי גוון מלא או טכניקת בלייאז׳/היילייטס בהתאמה אישית.</p><small>כ-150 דק׳</small></div></div>
+        </div>
+        <div class="service-group reveal">
+          <h3>טיפולים והחלקות</h3>
+          <div class="service-item"><div class="si-top"><h4>החלקת קרטין</h4><span class="price">480 ₪</span></div><div class="si-bottom"><p>החלקה מזינה להארכת חיי הסטיילינג והברקה עמוקה.</p><small>כ-180 דק׳</small></div></div>
+          <div class="service-item"><div class="si-top"><h4>טיפול שיקום עמוק</h4><span class="price">190 ₪</span></div><div class="si-bottom"><p>מסכה מקצועית לשיער יבש או פגום, עם עיסוי קרקפת.</p><small>כ-45 דק׳</small></div></div>
+        </div>
+        <div class="service-group reveal">
+          <h3>אירועים</h3>
+          <div class="service-item"><div class="si-top"><h4>פן ועיצוב לאירוע</h4><span class="price">140 ₪</span></div><div class="si-bottom"><p>פן חגיגי עם עיצוב תנועה ונפח לכל אירוע.</p><small>כ-40 דק׳</small></div></div>
+          <div class="service-item"><div class="si-top"><h4>תסרוקת כלה / ערב</h4><span class="price">420 ₪</span></div><div class="si-bottom"><p>עיצוב תסרוקת מלא כולל ניסיון (טרייל) מראש.</p><small>כ-120 דק׳</small></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Gallery ===================== -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">גלריה</div>
+        <h2>מבט לתוך הסטודיו</h2>
+        <p>קטעים מהעבודות האחרונות שלנו — כל תסרוקת מספרת סיפור אחר.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item g1 reveal"><span class="icon-mark">✨</span><span>בלייאז׳ זהוב</span></div>
+        <div class="gallery-item g2 reveal"><span class="icon-mark">👰</span><span>תסרוקת כלה</span></div>
+        <div class="gallery-item g3 reveal"><span class="icon-mark">🌿</span><span>גוונים חמים</span></div>
+        <div class="gallery-item g4 reveal"><span class="icon-mark">💧</span><span>פן משיי</span></div>
+        <div class="gallery-item g5 reveal"><span class="icon-mark">✂️</span><span>גזירה אדריכלית</span></div>
+        <div class="gallery-item g6 reveal"><span class="icon-mark">🎉</span><span>מראה לאירוע</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Testimonials ===================== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-head center reveal" style="margin-inline:auto;">
+        <div class="eyebrow" style="justify-content:center;display:flex;">מה אומרות עלינו</div>
+        <h2>לקוחות מספרות</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"הצוות פשוט מדהים — יצאתי עם תסרוקת חלומית ליום החתונה שלי, בדיוק כמו שדמיינתי."</p>
+          <div class="testi-person">
+            <div class="avatar" style="background:var(--rose-deep);">מ</div>
+            <div><strong>מיכל כהן</strong><span>לקוחה מאז 2021</span></div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"השירות הכי מקצועי שהיה לי בנתניה. מקשיבים, מייעצים, ולא ממהרים אף פעם."</p>
+          <div class="testi-person">
+            <div class="avatar" style="background:var(--sage);">ר</div>
+            <div><strong>רותם לוי</strong><span>תספורת + צבע</span></div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"אווירה נעימה, קפה טוב, ותוצאה מושלמת בכל פעם מחדש. ה-Vibhair experience האמיתי."</p>
+          <div class="testi-person">
+            <div class="avatar" style="background:var(--gold);">ד</div>
+            <div><strong>דנה אברהם</strong><span>לקוחה קבועה</span></div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="stars">★★★★☆</div>
+          <p class="quote">"מחירים הוגנים ותוצאה שעולה על הציפיות. ממליצה בחום לכל מי שמחפשת מספרה רצינית."</p>
+          <div class="testi-person">
+            <div class="avatar" style="background:var(--ink-soft);">י</div>
+            <div><strong>יעל שרון</strong><span>החלקת קרטין</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Contact ===================== -->
+  <section class="contact" id="contact">
+    <div class="container contact-grid">
+      <div class="reveal">
+        <div class="eyebrow">בואו לבקר</div>
+        <h2 style="font-size:clamp(1.9rem,3.4vw,2.6rem);">נשמח לראות אתכם בסטודיו</h2>
+        <div class="info-list">
+          <div class="info-row">
+            <div class="ico">📍</div>
+            <div><strong>כתובת</strong><p>רחוב הרצל 45, נתניה</p></div>
+          </div>
+          <div class="info-row">
+            <div class="ico">📞</div>
+            <div><strong>טלפון / וואטסאפ</strong><p>09-123-4567</p></div>
+          </div>
+          <div class="info-row">
+            <div class="ico">🕐</div>
+            <div><strong>שעות פתיחה</strong><p>א׳–ה׳: 9:00–20:00 &nbsp;·&nbsp; ו׳: 9:00–14:00 &nbsp;·&nbsp; שבת: סגור</p></div>
+          </div>
+        </div>
+        <div class="map-box" aria-hidden="true">
+          <div class="pin"><div class="dot"></div><div class="label">רחוב הרצל 45, נתניה</div></div>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm">
+        <div class="form-row"><label for="cf-name">שם מלא</label><input id="cf-name" type="text" placeholder="השם שלך" required></div>
+        <div class="form-row"><label for="cf-phone">טלפון</label><input id="cf-phone" type="tel" placeholder="05X-XXXXXXX" required></div>
+        <div class="form-row"><label for="cf-email">אימייל</label><input id="cf-email" type="email" placeholder="example@email.com" required></div>
+        <div class="form-row"><label for="cf-msg">הודעה</label><textarea id="cf-msg" placeholder="ספרו לנו במה נוכל לעזור..."></textarea></div>
+        <button type="submit" class="btn btn-primary btn-block">שליחת הודעה</button>
+        <p class="form-note">אפשר גם פשוט לדבר עם נועה, העוזרת הדיגיטלית שלנו, בפינה השמאלית התחתונה 💬</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== Footer ===================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <span class="wordmark">VIB<b>HAIR</b></span>
+          <p class="about">סטודיו שיער בוטיק בלב נתניה. מקצועיות, קשב, ותוצאה שמרגישה בדיוק כמוך.</p>
+        </div>
+        <div>
+          <h4>ניווט מהיר</h4>
+          <ul>
+            <li><a href="#services">שירותים</a></li>
+            <li><a href="#gallery">גלריה</a></li>
+            <li><a href="#testimonials">המלצות</a></li>
+            <li><a href="#contact">צור קשר</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>פרטי התקשרות</h4>
+          <ul>
+            <li>רחוב הרצל 45, נתניה</li>
+            <li>09-123-4567</li>
+            <li>א׳–ה׳ 9:00–20:00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Vibhair. כל הזכויות שמורות.</span>
+        <span>אתר הדגמה לצרכי הצגה</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== Chat Widget ===================== -->
+  <button class="chat-launcher" id="chatLauncher" aria-label="פתיחת צ׳אט">
+    <span class="badge"></span>
+    <span class="icon-chat">💬</span>
+    <span class="icon-close">✕</span>
+  </button>
+
+  <div class="chat-window" id="chatWindow" role="dialog" aria-label="צ׳אט עם נועה">
+    <div class="chat-head">
+      <div class="avatar" style="width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:600;">נ</div>
+      <div class="who">
+        <strong>נועה · Vibhair</strong>
+        <span>מחוברת עכשיו</span>
+      </div>
+    </div>
+    <div class="chat-body" id="chatBody"></div>
+    <div class="chat-quick" id="chatQuick"></div>
+    <form class="chat-input" id="chatInputForm">
+      <input type="text" id="chatInput" placeholder="כתבו הודעה..." autocomplete="off">
+      <button type="submit" aria-label="שליחה">➤</button>
+    </form>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  // Backend (see /server) — handles both the Google Calendar booking chatbot and
+  // the contact form's Google Sheets submission. The server now also serves this
+  // page itself, so in production the API is same-origin (empty base = relative
+  // URLs). Only local dev (page opened via file:// or served separately from
+  // localhost) needs an explicit cross-origin base pointing at `node server.js`.
+  var IS_LOCAL = ['localhost', '127.0.0.1', ''].indexOf(window.location.hostname) !== -1;
+  var API_BASE = IS_LOCAL ? 'http://localhost:3000' : '';
+  console.log('[Vibhair] API_BASE =', JSON.stringify(API_BASE), '(IS_LOCAL:', IS_LOCAL, ')');
+
+  /* ---------- Header scroll state ---------- */
+  var header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', function(){
+    header.classList.toggle('scrolled', window.scrollY > 30);
+  });
+
+  /* ---------- Mobile nav ---------- */
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', function(){
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ navLinks.classList.remove('open'); });
+  });
+
+  /* ---------- Footer year ---------- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------- Reveal on scroll ---------- */
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.12});
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+  /* ---------- Toast ---------- */
+  var toastEl = document.getElementById('toast');
+  var toastTimer;
+  function showToast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 3200);
+  }
+
+  /* ---------- Contact form (submits to Google Sheets via the backend) ---------- */
+  var EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var form = this;
+    var nameEl = document.getElementById('cf-name');
+    var phoneEl = document.getElementById('cf-phone');
+    var emailEl = document.getElementById('cf-email');
+    var msgEl = document.getElementById('cf-msg');
+
+    var name = nameEl.value.trim();
+    var phone = phoneEl.value.trim();
+    var email = emailEl.value.trim();
+    var message = msgEl.value.trim();
+
+    if(!name){ showToast('נא למלא שם מלא'); nameEl.focus(); return; }
+    if(!phone){ showToast('נא למלא מספר טלפון'); phoneEl.focus(); return; }
+    if(!EMAIL_PATTERN.test(email)){ showToast('נא להזין כתובת אימייל תקינה'); emailEl.focus(); return; }
+
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var originalLabel = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'שולח...';
+
+    var payload = {name: name, phone: phone, email: email, message: message};
+    console.log('[contact-form] POST', API_BASE + '/submit-form', payload);
+
+    fetch(API_BASE + '/submit-form', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload)
+    }).then(function(res){
+      return res.json().catch(function(){ return {}; }).then(function(data){
+        console.log('[contact-form] response', res.status, data);
+        if(!res.ok){ throw new Error(data.message || 'שגיאה בשליחת ההודעה'); }
+        return data;
+      });
+    }).then(function(){
+      showToast('ההודעה נשלחה בהצלחה!');
+      form.reset();
+    }).catch(function(err){
+      console.error('[contact-form] request failed', err);
+      showToast(err.message || 'אירעה שגיאה, נסו שוב מאוחר יותר');
+    }).finally(function(){
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+    });
+  });
+
+  /* =========================================================
+     Chat assistant "נועה" — pure client-side conversation tree
+     ========================================================= */
+
+  var SERVICES = [
+    {id:'women-cut', label:'תספורת נשים + פן', price:160},
+    {id:'men-cut',   label:'תספורת גברים', price:90},
+    {id:'color',     label:'צבע מלא / גוונים', price:380},
+    {id:'keratin',   label:'החלקת קרטין', price:480},
+    {id:'treatment', label:'טיפול שיקום עמוק', price:190},
+    {id:'bridal',    label:'תסרוקת כלה / ערב', price:420}
+  ];
+
+  var DAY_NAMES = ['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'];
+  var MONTHS = ['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר'];
+
+  function formatSlotLabel(isoDate){
+    var parts = isoDate.split('-');
+    var d = new Date(parseInt(parts[0],10), parseInt(parts[1],10)-1, parseInt(parts[2],10));
+    return 'יום ' + DAY_NAMES[d.getDay()] + ', ' + d.getDate() + ' ב' + MONTHS[d.getMonth()];
+  }
+
+  async function fetchWeekSlots(serviceId){
+    var res = await fetch(API_BASE + '/api/availability/week?serviceId=' + encodeURIComponent(serviceId) + '&days=7');
+    if(!res.ok){
+      var errBody = await res.json().catch(function(){ return {}; });
+      throw new Error(errBody.message || 'שגיאה בבדיקת זמינות');
+    }
+    var data = await res.json();
+    return data.slots; // flat [{date, time}, ...] across the whole week
+  }
+
+  function groupSlotsByDate(slots){
+    var map = {};
+    var order = [];
+    slots.forEach(function(s){
+      if(!map[s.date]){ map[s.date] = []; order.push(s.date); }
+      map[s.date].push(s.time);
+    });
+    return order.map(function(date){ return {date: date, times: map[date]}; });
+  }
+
+  function parseSlotDate(isoDate){
+    var parts = isoDate.split('-');
+    return new Date(parseInt(parts[0],10), parseInt(parts[1],10)-1, parseInt(parts[2],10));
+  }
+
+  function renderWeekPicker(days, service){
+    var wrap = document.createElement('div');
+    wrap.className = 'msg slot-picker';
+
+    var daysRow = document.createElement('div');
+    daysRow.className = 'sp-days';
+    var timesRow = document.createElement('div');
+    timesRow.className = 'sp-times';
+
+    function renderTimes(day){
+      timesRow.innerHTML = '';
+      if(!day || !day.times.length){
+        var empty = document.createElement('div');
+        empty.className = 'sp-empty';
+        empty.textContent = 'אין מועדים פנויים ביום הזה';
+        timesRow.appendChild(empty);
+        return;
+      }
+      day.times.forEach(function(time){
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'sp-time';
+        b.textContent = time;
+        b.addEventListener('click', function(){
+          var label = formatSlotLabel(day.date) + ' · ' + time;
+          addMsg(label, 'user');
+          chooseSlot({date: day.date, time: time, label: label});
+        });
+        timesRow.appendChild(b);
+      });
+    }
+
+    days.forEach(function(day, idx){
+      var d = parseSlotDate(day.date);
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'sp-day' + (idx === 0 ? ' active' : '');
+      b.innerHTML = DAY_NAMES[d.getDay()] + '<span>' + d.getDate() + '/' + (d.getMonth()+1) + '</span>';
+      b.addEventListener('click', function(){
+        daysRow.querySelectorAll('.sp-day').forEach(function(el){ el.classList.remove('active'); });
+        b.classList.add('active');
+        renderTimes(day);
+      });
+      daysRow.appendChild(b);
+    });
+
+    wrap.appendChild(daysRow);
+    wrap.appendChild(timesRow);
+    chatBody.appendChild(wrap);
+    if(days.length){ renderTimes(days[0]); }
+    scrollBottom();
+
+    setQuickReplies([
+      {label:'⬅️ בחירת שירות אחר', action: startBooking},
+      {label:'⬅️ חזרה לתפריט', action: mainMenu}
+    ]);
+  }
+
+  async function submitBooking(payload){
+    var res = await fetch(API_BASE + '/api/book', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload)
+    });
+    var data = await res.json().catch(function(){ return {}; });
+    if(!res.ok){
+      var err = new Error(data.message || 'שגיאה בקביעת התור');
+      err.conflict = (res.status === 409);
+      throw err;
+    }
+    return data;
+  }
+
+  var chatBody = document.getElementById('chatBody');
+  var chatQuick = document.getElementById('chatQuick');
+  var chatInput = document.getElementById('chatInput');
+  var chatWindow = document.getElementById('chatWindow');
+  var chatLauncher = document.getElementById('chatLauncher');
+  var chatInputForm = document.getElementById('chatInputForm');
+
+  var booking = {service:null, slot:null, name:null, phone:null};
+  var awaiting = null; // 'name' | 'phone' | null
+  var greeted = false;
+  var chatHistory = []; // conversation sent to Claude via /api/chat
+
+  function scrollBottom(){
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+
+  function addMsg(text, who, isConfirm){
+    var div = document.createElement('div');
+    div.className = 'msg ' + (who || 'bot') + (isConfirm ? ' confirm' : '');
+    if(isConfirm){ div.innerHTML = text; } else { div.textContent = text; }
+    chatBody.appendChild(div);
+    scrollBottom();
+  }
+
+  function botSay(text, delay){
+    var typing = document.createElement('div');
+    typing.className = 'typing';
+    typing.innerHTML = '<span></span><span></span><span></span>';
+    chatBody.appendChild(typing);
+    scrollBottom();
+    return new Promise(function(resolve){
+      setTimeout(function(){
+        typing.remove();
+        addMsg(text, 'bot');
+        resolve();
+      }, delay || 650);
+    });
+  }
+
+  function setQuickReplies(options){
+    chatQuick.innerHTML = '';
+    options.forEach(function(opt){
+      var b = document.createElement('button');
+      b.className = 'qbtn';
+      b.type = 'button';
+      b.textContent = opt.label;
+      b.addEventListener('click', function(){
+        addMsg(opt.label, 'user');
+        chatQuick.innerHTML = '';
+        opt.action();
+      });
+      chatQuick.appendChild(b);
+    });
+  }
+
+  function mainMenu(){
+    awaiting = null;
+    setQuickReplies([
+      {label:'💇‍♀️ שירותים ומחירים', action: showServices},
+      {label:'📅 קביעת תור', action: startBooking},
+      {label:'🕐 שעות וכתובת', action: showHours},
+      {label:'❓ שאלות נפוצות', action: showFaq}
+    ]);
+  }
+
+  function showServices(){
+    var list = SERVICES.map(function(s){ return '• ' + s.label + ' — ' + s.price + ' ₪'; }).join('\n');
+    botSay('הנה כמה מהשירותים המבוקשים אצלנו:').then(function(){
+      addMsg(list, 'bot');
+      return botSay('רוצים לקבוע תור לאחד מהם?', 500);
+    }).then(function(){
+      setQuickReplies([
+        {label:'📅 כן, לקבוע תור', action: startBooking},
+        {label:'⬅️ חזרה לתפריט', action: function(){ botSay('בטח 🙂').then(mainMenu); }}
+      ]);
+    });
+  }
+
+  function showHours(){
+    botSay('אנחנו נמצאים ברחוב הרצל 45, נתניה 📍').then(function(){
+      return botSay('שעות פעילות: א׳–ה׳ 9:00–20:00, ו׳ 9:00–14:00, שבת סגור 🕐', 550);
+    }).then(function(){
+      setQuickReplies([
+        {label:'📅 לקבוע תור', action: startBooking},
+        {label:'⬅️ חזרה לתפריט', action: mainMenu}
+      ]);
+    });
+  }
+
+  function showFaq(){
+    botSay('כמה שאלות נפוצות שאולי יעניינו אתכם 👇').then(function(){
+      setQuickReplies([
+        {label:'יש חניה בסביבה?', action: function(){ answerFaq('יש חניון ציבורי במרחק 2 דקות הליכה מהסטודיו, וגם חניה כחול-לבן ברחוב.'); }},
+        {label:'אפשר להגיע בלי תור?', action: function(){ answerFaq('מומלץ לתאם תור מראש כדי להבטיח את הזמן הנוח לכם, אבל תמיד נשמח לבדוק זמינות של הרגע.'); }},
+        {label:'מה מדיניות הביטולים?', action: function(){ answerFaq('ביטול או שינוי אפשריים עד 24 שעות לפני מועד התור, ללא עלות.'); }},
+        {label:'⬅️ חזרה לתפריט', action: mainMenu}
+      ]);
+    });
+  }
+
+  function answerFaq(text){
+    botSay(text).then(function(){
+      setQuickReplies([
+        {label:'❓ שאלה נוספת', action: showFaq},
+        {label:'⬅️ חזרה לתפריט', action: mainMenu}
+      ]);
+    });
+  }
+
+  function startBooking(){
+    booking = {service:null, slot:null, name:null, phone:null};
+    botSay('מעולה! בואו נקבע תור ✨').then(function(){
+      return botSay('לאיזה שירות תרצו להזמין תור?', 500);
+    }).then(function(){
+      var opts = SERVICES.map(function(s){
+        return {label: s.label, action: function(){ chooseService(s); }};
+      });
+      opts.push({label:'⬅️ חזרה לתפריט', action: mainMenu});
+      setQuickReplies(opts);
+    });
+  }
+
+  function chooseService(service){
+    booking.service = service;
+    chatQuick.innerHTML = '';
+    botSay('בודקת זמינות ביומן לשבוע הקרוב עבור "' + service.label + '"... ⏳').then(function(){
+      return fetchWeekSlots(service.id);
+    }).then(function(slots){
+      if(!slots.length){
+        return botSay('לא מצאתי מועדים פנויים השבוע הקרוב. אפשר ליצור קשר טלפוני ונמצא ביחד זמן מתאים 🙏').then(function(){
+          setQuickReplies([{label:'⬅️ חזרה לתפריט', action: mainMenu}]);
+        });
+      }
+      return botSay('הנה כל המועדים הפנויים אצלנו השבוע הקרוב ל"' + service.label + '" — בחרו יום ואז שעה:').then(function(){
+        renderWeekPicker(groupSlotsByDate(slots), service);
+      });
+    }).catch(function(err){
+      botSay('אופס, לא הצלחתי להתחבר ליומן כרגע (' + err.message + '). אפשר לנסות שוב או להתקשר אלינו.').then(function(){
+        setQuickReplies([
+          {label:'🔁 לנסות שוב', action: function(){ chooseService(service); }},
+          {label:'⬅️ חזרה לתפריט', action: mainMenu}
+        ]);
+      });
+    });
+  }
+
+  function chooseSlot(slot){
+    booking.slot = slot;
+    botSay('נהדר, שריינו את המועד עבורכם 📌').then(function(){
+      return botSay('מה השם המלא שלכם?', 500);
+    }).then(function(){
+      awaiting = 'name';
+      chatInput.placeholder = 'הקלידו את שמכם המלא...';
+      chatInput.focus();
+    });
+  }
+
+  function askPhone(){
+    botSay('תודה, ' + booking.name + '! ומה מספר הטלפון הכי טוב ליצירת קשר?').then(function(){
+      awaiting = 'phone';
+      chatInput.placeholder = '05X-XXXXXXX';
+      chatInput.focus();
+    });
+  }
+
+  function confirmBooking(){
+    awaiting = null;
+    botSay('רושמת את התור ביומן... ⏳', 400).then(function(){
+      return submitBooking({
+        serviceId: booking.service.id,
+        date: booking.slot.date,
+        time: booking.slot.time,
+        name: booking.name,
+        phone: booking.phone
+      });
+    }).then(function(data){
+      var html = ''
+        + '<div class="cf-title">התור שלכם אושר! 🎉</div>'
+        + '<div class="cf-row"><span>שירות</span><b>' + booking.service.label + '</b></div>'
+        + '<div class="cf-row"><span>מועד</span><b>' + booking.slot.label + '</b></div>'
+        + '<div class="cf-row"><span>שם</span><b>' + booking.name + '</b></div>'
+        + '<div class="cf-row"><span>טלפון</span><b>' + booking.phone + '</b></div>'
+        + '<div class="cf-row"><span>מספר אסמכתא</span><b>#' + data.refId + '</b></div>';
+      addMsg(html, 'bot', true);
+      return botSay('התור נשמר ביומן שלנו. מחכים לראותכם ב-Vibhair! 💇‍♀️', 600);
+    }).then(function(){
+      chatInput.placeholder = 'כתבו הודעה...';
+      setQuickReplies([
+        {label:'📅 לקבוע תור נוסף', action: startBooking},
+        {label:'⬅️ חזרה לתפריט', action: mainMenu}
+      ]);
+    }).catch(function(err){
+      if(err.conflict){
+        return botSay('אוי, מישהו הספיק לתפוס את המועד הזה ממש עכשיו. בואו נבחר מועד אחר 🙏').then(function(){
+          chooseService(booking.service);
+        });
+      }
+      botSay('אופס, לא הצלחתי לשמור את התור ביומן (' + err.message + '). אפשר לנסות שוב.').then(function(){
+        setQuickReplies([
+          {label:'🔁 לנסות שוב', action: confirmBooking},
+          {label:'⬅️ חזרה לתפריט', action: mainMenu}
+        ]);
+      });
+    });
+  }
+
+  /* ---------- free text -> Claude (real AI, connected to the real calendar) ---------- */
+
+  function renderBookingConfirmation(b){
+    var html = ''
+      + '<div class="cf-title">התור שלכם אושר! 🎉</div>'
+      + '<div class="cf-row"><span>שירות</span><b>' + b.serviceLabel + '</b></div>'
+      + '<div class="cf-row"><span>מועד</span><b>' + formatSlotLabel(b.date) + ' · ' + b.time + '</b></div>'
+      + '<div class="cf-row"><span>מספר אסמכתא</span><b>#' + b.refId + '</b></div>';
+    addMsg(html, 'bot', true);
+  }
+
+  function handleChatEvents(events){
+    events = events || [];
+    var bookingEvent = events.filter(function(e){ return e.type === 'booking' && e.booking && e.booking.success; }).pop();
+    if(bookingEvent){
+      renderBookingConfirmation(bookingEvent.booking);
+      setQuickReplies([
+        {label:'📅 לקבוע תור נוסף', action: startBooking},
+        {label:'⬅️ חזרה לתפריט', action: mainMenu}
+      ]);
+      return;
+    }
+
+    var availabilityEvent = events.filter(function(e){ return e.type === 'availability'; }).pop();
+    if(availabilityEvent && availabilityEvent.slots && availabilityEvent.slots.length){
+      var opts = availabilityEvent.slots.map(function(s){
+        var label = formatSlotLabel(s.date) + ' · ' + s.time;
+        return {label: label, action: function(){ addMsg(label, 'user'); askClaude(label); }};
+      });
+      opts.push({label:'⬅️ חזרה לתפריט', action: mainMenu});
+      setQuickReplies(opts);
+      return;
+    }
+
+    setQuickReplies([{label:'⬅️ חזרה לתפריט', action: mainMenu}]);
+  }
+
+  function askClaude(text){
+    chatHistory.push({role:'user', content: text});
+    var typing = document.createElement('div');
+    typing.className = 'typing';
+    typing.innerHTML = '<span></span><span></span><span></span>';
+    chatBody.appendChild(typing);
+    scrollBottom();
+
+    fetch(API_BASE + '/api/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({messages: chatHistory})
+    }).then(function(res){
+      return res.json().catch(function(){ return {}; }).then(function(data){
+        if(!res.ok){ throw new Error(data.message || 'שגיאה בתקשורת עם העוזרת'); }
+        return data;
+      });
+    }).then(function(data){
+      typing.remove();
+      chatHistory.push({role:'assistant', content: data.reply});
+      addMsg(data.reply, 'bot');
+      handleChatEvents(data.events);
+    }).catch(function(err){
+      console.error('[chat] request failed', err);
+      typing.remove();
+      chatHistory.pop(); // drop the unanswered user turn so retry doesn't duplicate context
+      addMsg('אופס, ' + (err.message || 'קרתה תקלה') + ' 🙏 אפשר לנסות שוב או להשתמש בתפריט למטה.', 'bot');
+      setQuickReplies([{label:'⬅️ חזרה לתפריט', action: mainMenu}]);
+    });
+  }
+
+  function handleFreeText(text){
+    if(!text) return;
+    addMsg(text, 'user');
+
+    if(awaiting === 'name'){
+      booking.name = text;
+      askPhone();
+      return;
+    }
+    if(awaiting === 'phone'){
+      booking.phone = text;
+      confirmBooking();
+      return;
+    }
+
+    chatQuick.innerHTML = '';
+    askClaude(text);
+  }
+
+  chatInputForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var val = chatInput.value;
+    chatInput.value = '';
+    handleFreeText(val);
+  });
+
+  function greet(){
+    if(greeted) return;
+    greeted = true;
+    botSay('היי, איזה כיף שהגעתן/ם! 🌸', 500).then(function(){
+      return botSay('אני נועה, העוזרת הדיגיטלית של Vibhair. איך אפשר לעזור היום?', 700);
+    }).then(mainMenu);
+  }
+
+  function toggleChat(forceOpen){
+    var willOpen = typeof forceOpen === 'boolean' ? forceOpen : !chatWindow.classList.contains('open');
+    chatWindow.classList.toggle('open', willOpen);
+    chatLauncher.classList.toggle('open', willOpen);
+    if(willOpen){ greet(); chatInput.focus(); }
+  }
+
+  chatLauncher.addEventListener('click', function(){ toggleChat(); });
+
+  window.openChatTo = function(intent){
+    toggleChat(true);
+    setTimeout(function(){
+      if(intent === 'booking'){ startBooking(); }
+    }, greeted ? 100 : 1900);
+  };
+
+})();
+</script>
+</body>
