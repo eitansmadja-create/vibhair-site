@@ -8,22 +8,31 @@ const Anthropic = require('@anthropic-ai/sdk');
 const rateLimit = require('express-rate-limit');
 
 const app = express();
+// Render (and most PaaS hosts) terminate TLS in front of the app and forward
+// plain HTTP with an X-Forwarded-Proto header — without trusting the proxy,
+// req.protocol always reports 'http', which breaks the same-origin check below.
+app.set('trust proxy', 1);
 
 // Only allow the exact origins that legitimately serve this frontend. Wide-open
 // CORS on a server that holds a paid API key (Anthropic) would let ANY website
 // silently trigger billed requests through a visitor's browser. "null" covers
-// index.html opened directly via file:// during local development.
+// index.html opened directly via file:// during local development. Extra
+// origins (e.g. a frontend hosted on a different domain from this API) can be
+// added via ALLOWED_ORIGINS without touching this list.
 const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || 'http://localhost:3000,http://127.0.0.1:3000,null')
   .split(',')
   .map((s) => s.trim())
   .filter(Boolean);
-app.use(cors({
-  origin(origin, callback) {
-    // No Origin header = same-origin request (the normal production case, since
-    // this server also serves index.html) or a non-browser client — always allow.
-    if (!origin || ALLOWED_ORIGINS.includes(origin)) return callback(null, true);
-    callback(new Error('Not allowed by CORS'));
-  },
+app.use(cors((req, callback) => {
+  const origin = req.header('Origin');
+  // No Origin header = non-browser client (curl, server-to-server) — always allow.
+  // Same-origin browser requests DO send an Origin header (Chrome sends it on
+  // POST/PUT/DELETE even same-origin), so it must be matched against this
+  // request's own host — this is the normal production case, since this server
+  // also serves index.html itself.
+  const sameOrigin = origin && origin === `${req.protocol}://${req.get('host')}`;
+  const allowed = !origin || sameOrigin || ALLOWED_ORIGINS.includes(origin);
+  callback(null, { origin: allowed });
 }));
 app.use(express.json({ limit: '100kb' }));
 
