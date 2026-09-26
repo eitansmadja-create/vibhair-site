@@ -499,7 +499,9 @@ app.listen(PORT, () => {
   if (!ANTHROPIC_API_KEY) {
     console.warn('⚠️  ANTHROPIC_API_KEY is not set — the AI chat (/api/chat) will not work until it is configured in server/.env');
   }
-  const hasSheetsKey = Boolean(process.env.GOOGLE_SHEETS_SERVICE_ACCOUNT_JSON) || fs.existsSync(SHEETS_KEY_PATH);
+  const hasSheetsKey = Boolean(process.env.GOOGLE_SHEETS_SERVICE_ACCOUNT_JSON)
+    || Boolean(process.env.GOOGLE_SERVICE_ACCOUNT_JSON)
+    || fs.existsSync(SHEETS_KEY_PATH);
   if (!hasSheetsKey) {
     console.warn(
       `⚠️  No Google Sheets service account key found. Place it at ${SHEETS_KEY_PATH} ` +
