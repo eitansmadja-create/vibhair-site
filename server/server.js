@@ -500,8 +500,7 @@ app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
   res.status(err.status || 500).json({ error: 'server_error', message: err.message || 'שגיאת שרת' });
 });
 
-app.listen(PORT, () => {
-  console.log(`Vibhair booking server listening on http://localhost:${PORT}`);
+function warnOnMissingConfig() {
   if (!CALENDAR_ID) {
     console.warn('⚠️  GOOGLE_CALENDAR_ID is not set — create server/.env from .env.example');
   }
@@ -517,4 +516,17 @@ app.listen(PORT, () => {
         'or set GOOGLE_SERVICE_ACCOUNT_KEY_PATH / GOOGLE_SHEETS_SERVICE_ACCOUNT_JSON.'
     );
   }
-});
+}
+
+// On a traditional host (local dev, Render) this file is run directly, so it
+// starts a persistent server. On Vercel, this file is instead `require()`d by
+// api/server.js — Vercel calls the exported Express app itself per-request as
+// a serverless function, so it must NOT also bind to a port here.
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Vibhair booking server listening on http://localhost:${PORT}`);
+    warnOnMissingConfig();
+  });
+}
+
+module.exports = app;

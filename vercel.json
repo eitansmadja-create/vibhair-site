@@ -1,0 +1,11 @@
+{
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/server" },
+    { "source": "/submit-form", "destination": "/api/server" }
+  ],
+  "functions": {
+    "api/server.js": {
+      "maxDuration": 60
+    }
+  }
+}

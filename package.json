@@ -1,0 +1,15 @@
+{
+  "name": "vibhair-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Vibhair site (static frontend) + booking/chat API, deployable as Vercel serverless functions.",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.128.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.0",
+    "googleapis": "^176.0.0",
+    "luxon": "^3.7.2"
+  }
+}

@@ -4,6 +4,8 @@ server/.env
 
 # Node
 server/node_modules/
+node_modules/
+.vercel
 
 # Local run logs / scratch
 server/*.log
