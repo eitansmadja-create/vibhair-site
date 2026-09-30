@@ -1,8 +1,9 @@
-<title>Vibhair — סטודיו שיער, נתניה</title>
+<!DOCTYPE html>
+<html><head><title>Vibhair — סטודיו שיער, נתניה</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Vibhair — סטודיו שיער בוטיק בלב נתניה. תספורות, צבע, החלקות ותסרוקות אירוע, בליווי עוזרת דיגיטלית לקביעת תורים.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;600;700&family=Bellefair&family=Assistant:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -187,7 +188,7 @@
   }
   .hero::before{
     content:"";position:absolute;inset:0;z-index:-2;
-    background-image:url('https://images.pexels.com/photos/33696272/pexels-photo-33696272.jpeg?auto=compress&cs=tinysrgb&w=1920');
+    background-image:url("assets/design-bcd6484d.jpg");
     background-size:cover;background-position:center 14%;background-repeat:no-repeat;
   }
   .hero::after{
@@ -280,12 +281,12 @@
   .g4{grid-column:span 2;grid-row:span 2;}
   .g5{grid-column:span 2;grid-row:span 2;}
   .g6{grid-column:span 2;grid-row:span 2;}
-  .g1::before{background-image:url('https://images.pexels.com/photos/7440131/pexels-photo-7440131.jpeg?auto=compress&cs=tinysrgb&w=1200');}
-  .g2::before{background-image:url('https://images.pexels.com/photos/6171/hairstyle-hair-wedding-bride.jpg?auto=compress&cs=tinysrgb&w=1200');}
-  .g3::before{background-image:url('https://images.pexels.com/photos/28994389/pexels-photo-28994389.jpeg?auto=compress&cs=tinysrgb&w=1200');}
-  .g4::before{background-image:url('https://images.pexels.com/photos/14615063/pexels-photo-14615063.jpeg?auto=compress&cs=tinysrgb&w=1200');}
-  .g5::before{background-image:url('https://images.pexels.com/photos/4981475/pexels-photo-4981475.jpeg?auto=compress&cs=tinysrgb&w=1200');}
-  .g6::before{background-image:url('https://images.pexels.com/photos/5824213/pexels-photo-5824213.jpeg?auto=compress&cs=tinysrgb&w=1200');}
+  .g1::before{background-image:url("assets/design-117532dc.jpg");}
+  .g2::before{background-image:url("assets/design-18ca7ade.jpg");}
+  .g3::before{background-image:url("assets/design-adce3853.jpg");}
+  .g4::before{background-image:url("assets/design-008c28d0.jpg");}
+  .g5::before{background-image:url("assets/design-b9a8e839.jpg");}
+  .g6::before{background-image:url("assets/design-8070308b.jpg");}
 
   @media (max-width:760px){
     .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px;}
@@ -311,51 +312,54 @@
   .testi-person strong{display:block;font-size:0.92rem;}
   .testi-person span{display:block;font-size:0.78rem;color:var(--ink-faint);}
 
-  /* ===================== Contact ===================== */
-  .contact{background:var(--surface-alt);}
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
-  .info-list{display:flex;flex-direction:column;gap:22px;margin-top:28px;}
-  .info-row{display:flex;gap:16px;align-items:flex-start;}
-  .info-row .ico{
-    width:42px;height:42px;border-radius:50%;background:var(--surface);border:1px solid var(--border);
-    display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;
-  }
-  .info-row strong{display:block;font-size:0.95rem;margin-bottom:2px;}
-  .info-row span, .info-row p{color:var(--ink-soft);font-size:0.92rem;}
+  /* ===================== Contact (editorial) ===================== */
+  .contact{background:var(--surface-alt);padding-bottom:0;}
+  .ct-head{margin-bottom:44px;}
+  .ct-display{font-size:clamp(1.9rem,3.4vw,2.6rem);line-height:1.2;}
+  .ct-display em{font-style:normal;color:var(--rose-deep);}
+  .ct-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:stretch;}
+  .ct-rows{margin:0;border-bottom:1px solid var(--border-strong);}
+  .ct-row{display:grid;grid-template-columns:130px minmax(0,1fr);gap:20px;align-items:baseline;padding:18px 0;border-top:1px solid var(--border-strong);}
+  .ct-row dt{font-size:0.78rem;font-weight:700;letter-spacing:0.14em;color:var(--gold);}
+  .ct-row dd{margin:0;font-family:var(--font-display);font-weight:500;font-size:1.2rem;line-height:1.35;color:var(--ink);display:flex;flex-direction:column;gap:2px;}
+  .ct-row dd small{font-family:var(--font-body);font-size:0.88rem;font-weight:400;color:var(--ink-soft);}
+  .ct-actions{display:flex;flex-wrap:wrap;gap:14px;margin:28px 0 30px;}
   .map-box{
-    margin-top:30px;border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--border);
-    aspect-ratio:16/10;position:relative;
-    background:
-      linear-gradient(var(--border) 1px, transparent 1px) 0 0/34px 34px,
-      linear-gradient(90deg, var(--border) 1px, transparent 1px) 0 0/34px 34px,
-      var(--surface);
+    border:1px solid var(--border);border-radius:var(--radius-md);aspect-ratio:16/9;position:relative;overflow:hidden;
+    isolation:isolate;background:var(--ground);
   }
-  .map-box .pin{
-    position:absolute;top:50%;left:50%;transform:translate(-50%,-100%);
-    display:flex;flex-direction:column;align-items:center;gap:6px;
-  }
-  .map-box .pin .dot{
-    width:34px;height:34px;border-radius:50% 50% 50% 0;transform:rotate(45deg);
-    background:var(--rose-deep);border:3px solid var(--surface);box-shadow:var(--shadow-sm);
-  }
-  .map-box .pin .label{
-    background:var(--surface);border:1px solid var(--border);padding:6px 12px;border-radius:var(--radius-pill);
-    font-size:0.78rem;font-weight:700;white-space:nowrap;box-shadow:var(--shadow-sm);
-  }
+  .map-img{position:absolute;width:170%;max-width:none;height:auto;left:-37.2%;top:-9.8%;}
+  .vib-pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-12px);display:flex;flex-direction:column;align-items:center;gap:10px;}
+  .vib-pin .dot{width:14px;height:14px;border-radius:50%;background:var(--rose-deep);outline:1px solid var(--rose);outline-offset:5px;animation:pinpulse 2.4s ease-in-out infinite;}
+  @keyframes pinpulse{0%,100%{outline-offset:4px;outline-color:var(--rose);}50%{outline-offset:10px;outline-color:transparent;}}
+  .vib-pin .label{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-pill);padding:6px 14px;font-size:0.78rem;font-weight:700;white-space:nowrap;box-shadow:var(--shadow-sm);}
 
-  .contact-form{
-    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);
-    padding:34px;box-shadow:var(--shadow-sm);
-  }
-  .form-row{display:flex;flex-direction:column;gap:8px;margin-bottom:18px;}
-  .form-row label{font-size:0.85rem;font-weight:700;color:var(--ink-soft);}
-  .form-row input,.form-row textarea{
-    background:var(--ground);border:1px solid var(--border-strong);border-radius:var(--radius-sm);
-    padding:13px 16px;color:var(--ink);transition:border-color .2s ease;
-  }
-  .form-row input:focus,.form-row textarea:focus{border-color:var(--rose-deep);outline:none;}
-  .form-row textarea{resize:vertical;min-height:100px;}
-  .form-note{font-size:0.78rem;color:var(--ink-faint);margin-top:12px;text-align:center;}
+  .ct-photo{position:relative;margin:0;min-height:520px;overflow:hidden;border-radius:var(--radius-md);background:var(--surface-alt);isolation:isolate;}
+  .ct-photo-img{position:absolute;inset:0;}
+  .ct-photo-img::before{content:"";position:absolute;inset:0;
+    background:url("assets/design-a3962ab7.jpg") center/cover;
+    animation:kenburns 18s ease-in-out infinite alternate;}
+  .ct-photo-img::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(20,14,18,0.7), rgba(20,14,18,0.05) 55%);}
+  @keyframes kenburns{from{transform:scale(1) translate(0,0);}to{transform:scale(1.16) translate(-3%,2%);}}
+  .ct-over{position:absolute;bottom:26px;left:28px;right:28px;direction:ltr;text-align:left;
+    font-family:var(--font-body);font-weight:300;font-size:clamp(1.8rem,3vw,2.4rem);line-height:1;letter-spacing:0.14em;color:var(--footer-text);}
+  .ct-over b{font-weight:700;color:var(--rose-tint);}
+  .ct-side{position:absolute;top:20px;right:16px;writing-mode:vertical-rl;direction:ltr;
+    font-size:0.7rem;font-weight:600;letter-spacing:0.24em;color:color-mix(in srgb, var(--footer-text) 80%, transparent);}
+
+  .ct-marquee{margin-top:80px;border-top:1px solid var(--border-strong);padding:22px 0 26px;overflow:hidden;}
+  .ct-track{display:flex;align-items:center;gap:28px;width:max-content;direction:ltr;animation:marquee 30s linear infinite;}
+  .ct-marquee:hover .ct-track{animation-play-state:paused;}
+  @keyframes marquee{to{transform:translateX(-50%);}}
+  .mq-word{font-family:var(--font-display);font-weight:500;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.1;color:var(--ink);white-space:nowrap;}
+  .mq-word.o{color:var(--rose-deep);}
+  .mq-sep{width:28px;height:28px;flex-shrink:0;}
+  .mq-sep g{fill:none;stroke:var(--gold);stroke-width:3;stroke-linecap:round;transform-origin:32px 32px;}
+  .mq-sep .ba{animation:snipA .9s ease-in-out infinite;}
+  .mq-sep .bb{animation:snipB .9s ease-in-out infinite;}
+  @keyframes snipA{0%,100%{transform:rotate(-14deg);}50%{transform:rotate(0);}}
+  @keyframes snipB{0%,100%{transform:rotate(14deg);}50%{transform:rotate(0);}}
+
   .toast{
     position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(140%);
     background:var(--ink);color:var(--ground);padding:14px 26px;border-radius:var(--radius-pill);
@@ -364,7 +368,15 @@
   }
   .toast.show{transform:translateX(-50%) translateY(0);}
 
-  @media (max-width:860px){ .contact-grid{grid-template-columns:1fr;} }
+  @media (max-width:860px){
+    .ct-grid{grid-template-columns:1fr;gap:40px;}
+    .ct-photo{min-height:0;aspect-ratio:4/5;}
+    .ct-marquee{margin-top:64px;}
+  }
+  @media (max-width:520px){
+    .ct-row{grid-template-columns:1fr;gap:6px;padding:18px 0;}
+    .ct-actions{gap:24px;}
+  }
 
   /* ===================== Footer ===================== */
   footer{background:var(--footer-bg);color:var(--footer-text);padding:64px 0 28px;}
@@ -500,7 +512,9 @@
   }
 </style>
 
-<body dir="rtl" lang="he">
+</head><body dir="rtl" lang="he">
+
+
 
   <!-- ===================== Header ===================== -->
   <header class="site-header" id="siteHeader">
@@ -515,10 +529,10 @@
         <a href="#gallery" class="nav-link">גלריה</a>
         <a href="#testimonials" class="nav-link">המלצות</a>
         <a href="#contact" class="nav-link">צור קשר</a>
-        <a href="#contact" class="btn btn-primary" style="display:none" id="mobileCta">קביעת תור</a>
+        <button type="button" class="btn btn-primary" style="display:none" id="mobileCta" onclick="document.getElementById('navLinks').classList.remove('open');openChatTo('booking')">קביעת תור</button>
       </nav>
       <div class="nav-actions">
-        <a href="#contact" class="btn btn-primary nav-cta-desktop">קביעת תור</a>
+        <button type="button" class="btn btn-primary nav-cta-desktop" onclick="openChatTo('booking')">קביעת תור</button>
         <button class="nav-toggle" id="navToggle" aria-label="תפריט"><span></span></button>
       </div>
     </div>
@@ -643,37 +657,33 @@
 
   <!-- ===================== Contact ===================== -->
   <section class="contact" id="contact">
-    <div class="container contact-grid">
-      <div class="reveal">
+    <div class="container">
+      <div class="ct-head reveal">
         <div class="eyebrow">בואו לבקר</div>
-        <h2 style="font-size:clamp(1.9rem,3.4vw,2.6rem);">נשמח לראות אתכם בסטודיו</h2>
-        <div class="info-list">
-          <div class="info-row">
-            <div class="ico">📍</div>
-            <div><strong>כתובת</strong><p>רחוב הרצל 45, נתניה</p></div>
-          </div>
-          <div class="info-row">
-            <div class="ico">📞</div>
-            <div><strong>טלפון / וואטסאפ</strong><p>09-123-4567</p></div>
-          </div>
-          <div class="info-row">
-            <div class="ico">🕐</div>
-            <div><strong>שעות פתיחה</strong><p>א׳–ה׳: 9:00–20:00 &nbsp;·&nbsp; ו׳: 9:00–14:00 &nbsp;·&nbsp; שבת: סגור</p></div>
-          </div>
-        </div>
-        <div class="map-box" aria-hidden="true">
-          <div class="pin"><div class="dot"></div><div class="label">רחוב הרצל 45, נתניה</div></div>
-        </div>
+        <h2 class="ct-display">נשמח לראות אתכם <em>בסטודיו</em></h2>
       </div>
-
-      <form class="contact-form reveal" id="contactForm">
-        <div class="form-row"><label for="cf-name">שם מלא</label><input id="cf-name" type="text" placeholder="השם שלך" required></div>
-        <div class="form-row"><label for="cf-phone">טלפון</label><input id="cf-phone" type="tel" placeholder="05X-XXXXXXX" required></div>
-        <div class="form-row"><label for="cf-email">אימייל</label><input id="cf-email" type="email" placeholder="example@email.com" required></div>
-        <div class="form-row"><label for="cf-msg">הודעה</label><textarea id="cf-msg" placeholder="ספרו לנו במה נוכל לעזור..."></textarea></div>
-        <button type="submit" class="btn btn-primary btn-block">שליחת הודעה</button>
-        <p class="form-note">אפשר גם פשוט לדבר עם נועה, העוזרת הדיגיטלית שלנו, בפינה השמאלית התחתונה 💬</p>
-      </form>
+      <div class="ct-grid">
+        <div class="ct-info reveal">
+          <dl class="ct-rows">
+            <div class="ct-row"><dt>כתובת</dt><dd>רחוב הרצל 45, נתניה<small>בין רחוב הרצל לטיילת הים</small></dd></div>
+            <div class="ct-row"><dt>טלפון / וואטסאפ</dt><dd><span dir="ltr" style="align-self:flex-start;">09-123-4567</span></dd></div>
+            <div class="ct-row"><dt>שעות פתיחה</dt><dd><span>א׳–ה׳ · 9:00–20:00</span><span>ו׳ · 9:00–14:00</span><small>שבת סגור</small></dd></div>
+          </dl>
+          <div class="ct-actions">
+            <button type="button" class="btn btn-primary" onclick="openChatTo('booking')">קביעת תור</button>
+            <a class="btn btn-outline" href="tel:+97291234567">התקשרו אלינו</a>
+          </div>
+          <div class="map-box" aria-hidden="true"><img class="map-img" src="assets/plan-netanya.png" alt=""><div class="vib-pin"><div class="dot"></div><div class="label">Vibhair · הרצל 45, נתניה</div></div></div>
+        </div>
+        <figure class="ct-photo reveal" aria-hidden="true">
+          <div class="ct-photo-img"></div>
+          <span class="ct-side">VIBHAIR — HERZL 45 — NETANYA</span>
+          <figcaption class="ct-over">VIB<br><b>HAIR</b></figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="ct-marquee" aria-hidden="true">
+      <div class="ct-track"><span class="mq-word">תספורת</span><svg class="mq-sep" viewBox="0 0 64 64"><g class="ba"><circle cx="22" cy="50" r="7"></circle><path d="M26 44 L32 32 L46 6"></path></g><g class="bb"><circle cx="42" cy="50" r="7"></circle><path d="M38 44 L32 32 L18 6"></path></g></svg><span class="mq-word o">צבע וגוונים</span><svg class="mq-sep" viewBox="0 0 64 64"><g class="ba"><circle cx="22" cy="50" r="7"></circle><path d="M26 44 L32 32 L46 6"></path></g><g class="bb"><circle cx="42" cy="50" r="7"></circle><path d="M38 44 L32 32 L18 6"></path></g></svg><span class="mq-word">החלקת קרטין</span><svg class="mq-sep" viewBox="0 0 64 64"><g class="ba"><circle cx="22" cy="50" r="7"></circle><path d="M26 44 L32 32 L46 6"></path></g><g class="bb"><circle cx="42" cy="50" r="7"></circle><path d="M38 44 L32 32 L18 6"></path></g></svg><span class="mq-word o">תסרוקת כלה</span><svg class="mq-sep" viewBox="0 0 64 64"><g class="ba"><circle cx="22" cy="50" r="7"></circle><path d="M26 44 L32 32 L46 6"></path></g><g class="bb"><circle cx="42" cy="50" r="7"></circle><path d="M38 44 L32 32 L18 6"></path></g></svg><span class="mq-word">טיפולי שיקום</span><svg class="mq-sep" viewBox="0 0 64 64"><g class="ba"><circle cx="22" cy="50" r="7"></circle><path d="M26 44 L32 32 L46 6"></path></g><g class="bb"><circle cx="42" cy="50" r="7"></circle><path d="M38 44 L32 32 L18 6"></path></g></svg><span class="mq-word">תספורת</span><svg class="mq-sep" viewBox="0 0 64 64"><g class="ba"><circle cx="22" cy="50" r="7"></circle><path d="M26 44 L32 32 L46 6"></path></g><g class="bb"><circle cx="42" cy="50" r="7"></circle><path d="M38 44 L32 32 L18 6"></path></g></svg><span class="mq-word o">צבע וגוונים</span><svg class="mq-sep" viewBox="0 0 64 64"><g class="ba"><circle cx="22" cy="50" r="7"></circle><path d="M26 44 L32 32 L46 6"></path></g><g class="bb"><circle cx="42" cy="50" r="7"></circle><path d="M38 44 L32 32 L18 6"></path></g></svg><span class="mq-word">החלקת קרטין</span><svg class="mq-sep" viewBox="0 0 64 64"><g class="ba"><circle cx="22" cy="50" r="7"></circle><path d="M26 44 L32 32 L46 6"></path></g><g class="bb"><circle cx="42" cy="50" r="7"></circle><path d="M38 44 L32 32 L18 6"></path></g></svg><span class="mq-word o">תסרוקת כלה</span><svg class="mq-sep" viewBox="0 0 64 64"><g class="ba"><circle cx="22" cy="50" r="7"></circle><path d="M26 44 L32 32 L46 6"></path></g><g class="bb"><circle cx="42" cy="50" r="7"></circle><path d="M38 44 L32 32 L18 6"></path></g></svg><span class="mq-word">טיפולי שיקום</span><svg class="mq-sep" viewBox="0 0 64 64"><g class="ba"><circle cx="22" cy="50" r="7"></circle><path d="M26 44 L32 32 L46 6"></path></g><g class="bb"><circle cx="42" cy="50" r="7"></circle><path d="M38 44 L32 32 L18 6"></path></g></svg></div>
     </div>
   </section>
 
@@ -790,55 +800,6 @@
     toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 3200);
   }
 
-  /* ---------- Contact form (submits to Google Sheets via the backend) ---------- */
-  var EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  document.getElementById('contactForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    var form = this;
-    var nameEl = document.getElementById('cf-name');
-    var phoneEl = document.getElementById('cf-phone');
-    var emailEl = document.getElementById('cf-email');
-    var msgEl = document.getElementById('cf-msg');
-
-    var name = nameEl.value.trim();
-    var phone = phoneEl.value.trim();
-    var email = emailEl.value.trim();
-    var message = msgEl.value.trim();
-
-    if(!name){ showToast('נא למלא שם מלא'); nameEl.focus(); return; }
-    if(!phone){ showToast('נא למלא מספר טלפון'); phoneEl.focus(); return; }
-    if(!EMAIL_PATTERN.test(email)){ showToast('נא להזין כתובת אימייל תקינה'); emailEl.focus(); return; }
-
-    var submitBtn = form.querySelector('button[type="submit"]');
-    var originalLabel = submitBtn.textContent;
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'שולח...';
-
-    var payload = {name: name, phone: phone, email: email, message: message};
-    console.log('[contact-form] POST', API_BASE + '/submit-form', payload);
-
-    fetch(API_BASE + '/submit-form', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(payload)
-    }).then(function(res){
-      return res.json().catch(function(){ return {}; }).then(function(data){
-        console.log('[contact-form] response', res.status, data);
-        if(!res.ok){ throw new Error(data.message || 'שגיאה בשליחת ההודעה'); }
-        return data;
-      });
-    }).then(function(){
-      showToast('ההודעה נשלחה בהצלחה!');
-      form.reset();
-    }).catch(function(err){
-      console.error('[contact-form] request failed', err);
-      showToast(err.message || 'אירעה שגיאה, נסו שוב מאוחר יותר');
-    }).finally(function(){
-      submitBtn.disabled = false;
-      submitBtn.textContent = originalLabel;
-    });
-  });
 
   /* =========================================================
      Chat assistant "נועה" — pure client-side conversation tree
@@ -1286,4 +1247,5 @@
 
 })();
 </script>
-</body>
+
+</body></html>
