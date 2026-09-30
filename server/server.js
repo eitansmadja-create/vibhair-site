@@ -49,6 +49,12 @@ app.get('/', (req, res) => {
   res.sendFile(INDEX_HTML_PATH);
 });
 
+// Design assets (photos, plan image) referenced by index.html. Scoped to this
+// one subfolder only — never serve the project root itself, which holds
+// secrets like .env and the service account key file.
+const ASSETS_DIR = path.join(path.dirname(INDEX_HTML_PATH), 'assets');
+app.use('/assets', express.static(ASSETS_DIR));
+
 const PORT = process.env.PORT || 3000;
 const CALENDAR_ID = process.env.GOOGLE_CALENDAR_ID;
 const TIMEZONE = 'Asia/Jerusalem';
